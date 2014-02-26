@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<oslc4j_ai:AdaptorInterface xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oslc4j_ai="http://org.eclipse.lyo/oslc4j/adaptorInterface" xsi:schemaLocation="http://org.eclipse.lyo/oslc4j/adaptorInterface ../../org.eclipse.lyo.oslc4j.adaptormodel/model/adaptorInterface.ecore" name="bug2adapter" javaClassBaseNamespace="demo.bug2adapter" javaFilesBasePath="/src/" jspFilesBasePath="/WebContent" javascriptFilesBasePath="/WebContent">
+  <serviceProviderCatalog title="Bug2Catalog" description="SP Catalog for the Bug2 Adapter">
+    <publisher title="Bug2" identifier="demo.bug2" icon="http://open-services.net/css/images/logo-forflip.png"/>
+    <serviceProviders title="Service Provider for Bug2" description="The description of SP4Bug2 goes here">
+      <publisher title="Eclipse Lyo" identifier="urn:oslc:ServiceProvider"/>
+      <services>
+        <domainSpecification href="platform:/resource/org.eclipse.lyo.oslc4j.adaptormodel/model/OSLCChangeManagementSpecification.xmi#//@domainSpecifications.0"/>
+        <creationFactories title="Change Request Creation Factory" label="Change Request Creation" resourceTypes="//@specification/@domainSpecifications.0/@resources.0"/>
+        <queryCapabilities title="Change Request Query Capability" label="Change Request Catalog Query" queryBaseURI="" resourceTypes="//@specification/@domainSpecifications.0/@resources.0"/>
+        <selectionDialogs title="Change Request Selection Dialog" label="Change Request Selection Dialog" dialogURI="/{serviceProviderId}/bug2ChangeRequests/selector" hintWidth="325" hintHeight="325" resourceTypes="//@specification/@domainSpecifications.0/@resources.0"/>
+        <creationDialogs title="Change Request Creation Dialog" label="Change Request Creation Dialog" dialogURI="/{serviceProviderId}/bug2ChangeRequests/creator" hintWidth="600" hintHeight="375" resourceTypes="//@specification/@domainSpecifications.0/@resources.0"/>
+      </services>
+    </serviceProviders>
+  </serviceProviderCatalog>
+  <specification>
+    <domainSpecifications name="Bug2" namespaceURI="http://www.bugzilla.org/rdf" namespacePrefix="//@specification/@domainPrefixes.0">
+      <resources name="Bug2ChangeRequest" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.1 //@specification/@domainSpecifications.0/@resourceProperties.2">
+        <extends href="platform:/resource/org.eclipse.lyo.oslc4j.adaptormodel/model/OSLCChangeManagementSpecification.xmi#//@domainSpecifications.0/@resources.0"/>
+      </resources>
+      <resourceProperties name="product" valueType="String"/>
+      <resourceProperties title="Component" name="component" occurs="zeroOrOne" valueType="String"/>
+      <resourceProperties title="Version" name="version" occurs="zeroOrOne" valueType="String"/>
+    </domainSpecifications>
+    <domainPrefixes name="bug2"/>
+  </specification>
+</oslc4j_ai:AdaptorInterface>

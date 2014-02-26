@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="bug2adapter">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test/resources"/>
+        <property name="context-root" value="bug2adapter"/>
+        <property name="java-output-path" value="/bug2adapter/build/classes"/>
+    </wb-module>
+</project-modules>
